@@ -27,6 +27,12 @@ public class UserService {
             return new UserResponse(user.getId(), user.getUsername(), "");
             }
         }
+        //Optional<T>
+        //null이 올 수 있는 값을 감싸는 Wrapper클래스
+        //참조하더라도 NullPointerException(NPE)가 발생하지 않도록 도와준다.
+        //Optional.get() : Optional에 랩핑된 객체의 연산이 끝나고 최종적으로 값을 가져옴
+                        // get()은 랩핑된 객체가 null이 아닌 경우에만 값을 반환할 수 있다.
+                        // 그렇지 않으면 NoSuchElementException이 발생
 
     public UserResponse addUser(UserRequest dto){
         User user = dto.toEntity();
